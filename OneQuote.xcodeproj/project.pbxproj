@@ -1,0 +1,328 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02EA17641F12B8250013CF40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA17631F12B8250013CF40 /* AppDelegate.swift */; };
+		02EA17661F12B8250013CF40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA17651F12B8250013CF40 /* ViewController.swift */; };
+		02EA17691F12B8250013CF40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02EA17671F12B8250013CF40 /* Main.storyboard */; };
+		02EA176C1F12B8250013CF40 /* OneQuote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02EA176A1F12B8250013CF40 /* OneQuote.xcdatamodeld */; };
+		02EA176E1F12B8250013CF40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EA176D1F12B8250013CF40 /* Assets.xcassets */; };
+		02EA17711F12B8250013CF40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02EA176F1F12B8250013CF40 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02EA17601F12B8250013CF40 /* OneQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02EA17631F12B8250013CF40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02EA17651F12B8250013CF40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02EA17681F12B8250013CF40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02EA176B1F12B8250013CF40 /* OneQuote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OneQuote.xcdatamodel; sourceTree = "<group>"; };
+		02EA176D1F12B8250013CF40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02EA17701F12B8250013CF40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		02EA17721F12B8250013CF40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02EA175D1F12B8250013CF40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02EA17571F12B8250013CF40 = {
+			isa = PBXGroup;
+			children = (
+				02EA17621F12B8250013CF40 /* OneQuote */,
+				02EA17611F12B8250013CF40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02EA17611F12B8250013CF40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02EA17601F12B8250013CF40 /* OneQuote.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02EA17621F12B8250013CF40 /* OneQuote */ = {
+			isa = PBXGroup;
+			children = (
+				02EA17631F12B8250013CF40 /* AppDelegate.swift */,
+				02EA17651F12B8250013CF40 /* ViewController.swift */,
+				02EA17671F12B8250013CF40 /* Main.storyboard */,
+				02EA176D1F12B8250013CF40 /* Assets.xcassets */,
+				02EA176F1F12B8250013CF40 /* LaunchScreen.storyboard */,
+				02EA17721F12B8250013CF40 /* Info.plist */,
+				02EA176A1F12B8250013CF40 /* OneQuote.xcdatamodeld */,
+			);
+			path = OneQuote;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02EA175F1F12B8250013CF40 /* OneQuote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02EA17751F12B8250013CF40 /* Build configuration list for PBXNativeTarget "OneQuote" */;
+			buildPhases = (
+				02EA175C1F12B8250013CF40 /* Sources */,
+				02EA175D1F12B8250013CF40 /* Frameworks */,
+				02EA175E1F12B8250013CF40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneQuote;
+			productName = OneQuote;
+			productReference = 02EA17601F12B8250013CF40 /* OneQuote.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02EA17581F12B8250013CF40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Ryan Phan";
+				TargetAttributes = {
+					02EA175F1F12B8250013CF40 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = LAB4TFH643;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 02EA175B1F12B8250013CF40 /* Build configuration list for PBXProject "OneQuote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02EA17571F12B8250013CF40;
+			productRefGroup = 02EA17611F12B8250013CF40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02EA175F1F12B8250013CF40 /* OneQuote */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02EA175E1F12B8250013CF40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02EA17711F12B8250013CF40 /* LaunchScreen.storyboard in Resources */,
+				02EA176E1F12B8250013CF40 /* Assets.xcassets in Resources */,
+				02EA17691F12B8250013CF40 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02EA175C1F12B8250013CF40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02EA176C1F12B8250013CF40 /* OneQuote.xcdatamodeld in Sources */,
+				02EA17661F12B8250013CF40 /* ViewController.swift in Sources */,
+				02EA17641F12B8250013CF40 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		02EA17671F12B8250013CF40 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02EA17681F12B8250013CF40 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		02EA176F1F12B8250013CF40 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02EA17701F12B8250013CF40 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		02EA17731F12B8250013CF40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		02EA17741F12B8250013CF40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		02EA17761F12B8250013CF40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LAB4TFH643;
+				INFOPLIST_FILE = OneQuote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ryan.OneQuote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		02EA17771F12B8250013CF40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LAB4TFH643;
+				INFOPLIST_FILE = OneQuote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ryan.OneQuote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02EA175B1F12B8250013CF40 /* Build configuration list for PBXProject "OneQuote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02EA17731F12B8250013CF40 /* Debug */,
+				02EA17741F12B8250013CF40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02EA17751F12B8250013CF40 /* Build configuration list for PBXNativeTarget "OneQuote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02EA17761F12B8250013CF40 /* Debug */,
+				02EA17771F12B8250013CF40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		02EA176A1F12B8250013CF40 /* OneQuote.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				02EA176B1F12B8250013CF40 /* OneQuote.xcdatamodel */,
+			);
+			currentVersion = 02EA176B1F12B8250013CF40 /* OneQuote.xcdatamodel */;
+			path = OneQuote.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 02EA17581F12B8250013CF40 /* Project object */;
+}
