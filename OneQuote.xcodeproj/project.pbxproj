@@ -13,6 +13,8 @@
 		02EA176C1F12B8250013CF40 /* OneQuote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02EA176A1F12B8250013CF40 /* OneQuote.xcdatamodeld */; };
 		02EA176E1F12B8250013CF40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EA176D1F12B8250013CF40 /* Assets.xcassets */; };
 		02EA17711F12B8250013CF40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02EA176F1F12B8250013CF40 /* LaunchScreen.storyboard */; };
+		02EA17791F12BB400013CF40 /* OneQuoteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA17781F12BB400013CF40 /* OneQuoteClient.swift */; };
+		02EA177B1F12BB660013CF40 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA177A1F12BB660013CF40 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		02EA176D1F12B8250013CF40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02EA17701F12B8250013CF40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02EA17721F12B8250013CF40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02EA17781F12BB400013CF40 /* OneQuoteClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneQuoteClient.swift; sourceTree = "<group>"; };
+		02EA177A1F12BB660013CF40 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		02EA17621F12B8250013CF40 /* OneQuote */ = {
 			isa = PBXGroup;
 			children = (
+				02EA177A1F12BB660013CF40 /* Constants.swift */,
+				02EA17781F12BB400013CF40 /* OneQuoteClient.swift */,
 				02EA17631F12B8250013CF40 /* AppDelegate.swift */,
 				02EA17651F12B8250013CF40 /* ViewController.swift */,
 				02EA17671F12B8250013CF40 /* Main.storyboard */,
@@ -140,8 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02EA177B1F12BB660013CF40 /* Constants.swift in Sources */,
 				02EA176C1F12B8250013CF40 /* OneQuote.xcdatamodeld in Sources */,
 				02EA17661F12B8250013CF40 /* ViewController.swift in Sources */,
+				02EA17791F12BB400013CF40 /* OneQuoteClient.swift in Sources */,
 				02EA17641F12B8250013CF40 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
