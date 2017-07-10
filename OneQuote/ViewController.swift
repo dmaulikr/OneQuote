@@ -13,11 +13,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+       
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func getPressed(_ sender: UIButton) {
+        var parameters = [String: AnyObject]()
+        parameters["category"] = "inspire" as AnyObject
+//        parameters["maxlength"] = "100" as AnyObject
+        
+        OneQuoteClient.sharedInstance().getMethod(Constants.Methods.Search, parameters: parameters) { (result) in
+            
+        }
     }
 
 

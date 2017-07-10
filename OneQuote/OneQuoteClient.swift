@@ -11,6 +11,36 @@ import Foundation
 class OneQuoteClient: NSObject {
     var session = URLSession.shared
     
+    func getMethod (_ method: String, parameters: [String: AnyObject], completionHandler: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) {
+        //1. Set parameters
+        
+        //2. Build the URL
+        let url = oneQuoteURLFromParameters(parameters, withPathExtension: method)
+        
+        //3. Configure the request
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue( Constants.OneQuote.APIKey, forHTTPHeaderField:Constants.Parameters.RequestHeaderSecret )
+        
+        
+        //4. Make the request
+        let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
+            //5. and 6. Parse and use the data
+            
+            /* GUARD: Was there any data returned? */
+            guard let data = data else {
+                print("No data was returned by the request!")
+                return
+            }
+            
+            self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandler)
+        }
+        //7. Start the request
+        task.resume()
+        print("URL:\(url)")
+    }
+    
     // create a URL from parameters
     private func oneQuoteURLFromParameters(_ parameters: [String:AnyObject], withPathExtension: String? = nil) -> URL {
         
@@ -26,6 +56,20 @@ class OneQuoteClient: NSObject {
         }
         
         return components.url!
+    }
+    // given raw JSON, return a usable Foundation object
+    private func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: (_ result: AnyObject?, _ error: NSError?) -> Void) {
+        
+        var parsedResult: AnyObject! = nil
+        do {
+            parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
+            print("Result: \(parsedResult)")
+        } catch {
+            let userInfo = [NSLocalizedDescriptionKey : "Could not parse the data as JSON: '\(data)'"]
+            completionHandlerForConvertData(nil, NSError(domain: "convertDataWithCompletionHandler", code: 1, userInfo: userInfo))
+        }
+        
+        completionHandlerForConvertData(parsedResult, nil)
     }
     
     class func sharedInstance() -> OneQuoteClient {
