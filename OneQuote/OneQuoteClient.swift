@@ -21,23 +21,28 @@ class OneQuoteClient: NSObject {
         let request = NSMutableURLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue( Constants.OneQuote.APIKey, forHTTPHeaderField:Constants.Parameters.RequestHeaderSecret )
+        request.addValue( Constants.OneQuote.APIKey, forHTTPHeaderField:Constants.ParameterKey.RequestHeaderSecret )
         
         
         //4. Make the request
-        let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
-            //5. and 6. Parse and use the data
-            
-            /* GUARD: Was there any data returned? */
-            guard let data = data else {
-                print("No data was returned by the request!")
-                return
+        DispatchQueue.global(qos: .userInteractive).async {
+            let task = self.session.dataTask(with: request as URLRequest) { (data, response, error) in
+                //5. and 6. Parse and use the data
+                
+                /* GUARD: Was there any data returned? */
+                guard let data = data else {
+                    print("No data was returned by the request!")
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandler)
+                }
+                
             }
-            
-            self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandler)
+            //7. Start the request
+            task.resume()
+
         }
-        //7. Start the request
-        task.resume()
         print("URL:\(url)")
     }
     
@@ -58,7 +63,7 @@ class OneQuoteClient: NSObject {
         return components.url!
     }
     // given raw JSON, return a usable Foundation object
-    private func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: (_ result: AnyObject?, _ error: NSError?) -> Void) {
+    private func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) {
         
         var parsedResult: AnyObject! = nil
         do {
@@ -68,8 +73,10 @@ class OneQuoteClient: NSObject {
             let userInfo = [NSLocalizedDescriptionKey : "Could not parse the data as JSON: '\(data)'"]
             completionHandlerForConvertData(nil, NSError(domain: "convertDataWithCompletionHandler", code: 1, userInfo: userInfo))
         }
+        DispatchQueue.main.async {
+            completionHandlerForConvertData(parsedResult, nil)
+        }
         
-        completionHandlerForConvertData(parsedResult, nil)
     }
     
     class func sharedInstance() -> OneQuoteClient {

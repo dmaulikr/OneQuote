@@ -25,8 +25,16 @@ struct Constants {
 
     }
     
-    struct Parameters {
+    struct ParameterKey {
         static let RequestHeaderSecret = "X-TheySaidSo-Api-Secret"
+        static let Category = "category"
+        static let MaxLength = "maxlength"
+        static let MinLength = "minlength"
+    }
+    struct ParameterValue{
+        static let Inspire = "inspire"
+        static let MaxLengthValue = "300"
+        static let MinLengthValue = "100"
     }
 
 
