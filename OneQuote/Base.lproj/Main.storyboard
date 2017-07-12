@@ -24,6 +24,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where there is a will, there is a way !" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-HL-05o">
                                 <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -44,6 +45,7 @@
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="nbA-ve-2pX" appends="YES" id="kwS-51-ZHE"/>
+                            <outletCollection property="gestureRecognizers" destination="dw5-Dk-9Kz" appends="YES" id="brh-nt-ZuC"/>
                         </connections>
                     </view>
                     <connections>
@@ -57,8 +59,13 @@
                         <action selector="tapRecognized:" destination="BYZ-38-t0r" id="4sc-pU-jI8"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="dw5-Dk-9Kz">
+                    <connections>
+                        <action selector="swipeRecognized:" destination="BYZ-38-t0r" id="gwb-fZ-X1G"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+            <point key="canvasLocation" x="-39.200000000000003" y="-9.4452773613193415"/>
         </scene>
     </scenes>
 </document>

@@ -22,7 +22,7 @@ struct Constants {
     struct Methods {
     
         static let Search = "/search"
-
+        static let Random = "/random"
     }
     
     struct ParameterKey {
