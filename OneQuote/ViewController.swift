@@ -13,12 +13,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     @IBOutlet weak var quoteLabel: UILabel!
+    var colorGenerator = ColorWheel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         activitySpinner.hidesWhenStopped = true
-//        swipeGesture.direction = UISwipeGestureRecognizerDirection.right
-//        swipeGesture.numberOfTouchesRequired = 1
+        view.backgroundColor = colorGenerator.getRandomColor()
+
     }
 
 
@@ -36,15 +38,15 @@ class ViewController: UIViewController {
 
     func getQuoteWithParameters (_ parameters: [String:AnyObject], method: String) {
 
-        
         activitySpinner.startAnimating()
         OneQuoteClient.sharedInstance().getMethod(method, parameters: parameters) { (result, error) in
             if let parsedData = result as? [String: AnyObject]{
                 if let contents = parsedData["contents"] as? [String:AnyObject] {
                     if let quote = contents["quote"] as? String, let author = contents["author"] as? String {
                         DispatchQueue.main.async {
-                            self.activitySpinner.stopAnimating()
                             self.quoteLabel.text = "\(quote) - \(author)"
+                            self.view.backgroundColor = self.colorGenerator.getRandomColor()
+                            self.activitySpinner.stopAnimating()
                         }
                         
                     }

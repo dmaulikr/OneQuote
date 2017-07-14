@@ -15,6 +15,7 @@
 		02EA17711F12B8250013CF40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02EA176F1F12B8250013CF40 /* LaunchScreen.storyboard */; };
 		02EA17791F12BB400013CF40 /* OneQuoteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA17781F12BB400013CF40 /* OneQuoteClient.swift */; };
 		02EA177B1F12BB660013CF40 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA177A1F12BB660013CF40 /* Constants.swift */; };
+		3C3C06581F16E61000FCB987 /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C06571F16E61000FCB987 /* ColorWheel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		02EA17721F12B8250013CF40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02EA17781F12BB400013CF40 /* OneQuoteClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneQuoteClient.swift; sourceTree = "<group>"; };
 		02EA177A1F12BB660013CF40 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3C3C06571F16E61000FCB987 /* ColorWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorWheel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				02EA177A1F12BB660013CF40 /* Constants.swift */,
 				02EA17781F12BB400013CF40 /* OneQuoteClient.swift */,
 				02EA17631F12B8250013CF40 /* AppDelegate.swift */,
+				3C3C06571F16E61000FCB987 /* ColorWheel.swift */,
 				02EA17651F12B8250013CF40 /* ViewController.swift */,
 				02EA17671F12B8250013CF40 /* Main.storyboard */,
 				02EA176D1F12B8250013CF40 /* Assets.xcassets */,
@@ -151,6 +154,7 @@
 				02EA17661F12B8250013CF40 /* ViewController.swift in Sources */,
 				02EA17791F12BB400013CF40 /* OneQuoteClient.swift in Sources */,
 				02EA17641F12B8250013CF40 /* AppDelegate.swift in Sources */,
+				3C3C06581F16E61000FCB987 /* ColorWheel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
