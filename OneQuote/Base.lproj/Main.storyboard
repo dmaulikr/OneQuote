@@ -74,6 +74,9 @@
                             <action selector="refresh:" destination="X8I-mS-QZ8" eventType="valueChanged" id="Bou-yR-0Lb"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showQuote" id="muq-ou-gfO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5e-Q4-cwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where there is a will, there is a way !" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-HL-05o">
-                                <rect key="frame" x="16" y="20" width="343" height="598"/>
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -117,7 +120,7 @@
                             <outletCollection property="gestureRecognizers" destination="dw5-Dk-9Kz" appends="YES" id="brh-nt-ZuC"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="HQX-1D-PVy"/>
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="HQX-1D-PVy"/>
                     <connections>
                         <outlet property="activitySpinner" destination="BOU-iO-eyL" id="mwx-5M-sMx"/>
                         <outlet property="quoteLabel" destination="aLz-HL-05o" id="Q3Z-pA-MBU"/>
@@ -140,6 +143,7 @@
         <!--Navigation Controller-->
         <scene sceneID="4XT-lF-ZDS">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X9E-a1-3mH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1gR-X4-ZWL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="history" id="ij6-SL-Xnf"/>
                     <toolbarItems/>
@@ -152,9 +156,11 @@
                         <segue destination="X8I-mS-QZ8" kind="relationship" relationship="rootViewController" id="KWZ-y9-Ysp"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X9E-a1-3mH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13.6" y="550.97451274362822"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="muq-ou-gfO"/>
+    </inferredMetricsTieBreakers>
 </document>

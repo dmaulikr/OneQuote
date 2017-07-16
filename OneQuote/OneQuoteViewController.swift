@@ -14,6 +14,8 @@ class OneQuoteViewController: UIViewController {
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     @IBOutlet weak var quoteLabel: UILabel!
     var colorGenerator = ColorWheel()
+    var quote:String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,11 @@ class OneQuoteViewController: UIViewController {
         activitySpinner.hidesWhenStopped = true
         view.backgroundColor = colorGenerator.getRandomColor()
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if let myQuote = quote {
+            quoteLabel.text = myQuote
+        }
     }
 
 
