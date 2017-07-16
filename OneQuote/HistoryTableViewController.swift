@@ -69,6 +69,7 @@ class HistoryTableViewController: UITableViewController {
         if let quote = fetchResultsController?.object(at: indexPath), let quoteString = quote.quote, let quoteAuthor = quote.author{
             completeQuote = quoteString + " - " + quoteAuthor
             performSegue(withIdentifier: "showQuote", sender: self)
+         
         }
     }
 

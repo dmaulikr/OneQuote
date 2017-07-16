@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="cnD-aM-3e7"/>
+                        <segue destination="z1l-VR-cXx" kind="relationship" relationship="viewControllers" id="cnD-aM-3e7"/>
                         <segue destination="1gR-X4-ZWL" kind="relationship" relationship="viewControllers" id="DWs-CR-Ra5"/>
                     </connections>
                 </tabBarController>
@@ -60,6 +60,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showQuote" trigger="accessoryAction" id="Jxh-hY-IJl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -69,20 +72,18 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="History" id="zdh-9f-Fo2"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="pUp-td-BX8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="refresh:" destination="X8I-mS-QZ8" eventType="valueChanged" id="Bou-yR-0Lb"/>
                         </connections>
                     </refreshControl>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="showQuote" id="muq-ou-gfO"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5e-Q4-cwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="952.79999999999995" y="550.97451274362822"/>
         </scene>
-        <!--One Quote View Controller-->
+        <!--Quote-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="OneQuoteViewController" customModule="OneQuote" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,7 +121,9 @@
                             <outletCollection property="gestureRecognizers" destination="dw5-Dk-9Kz" appends="YES" id="brh-nt-ZuC"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="HQX-1D-PVy"/>
+                    <navigationItem key="navigationItem" title="Quote" id="5NE-59-tYQ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="dpe-4h-Q2z"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="activitySpinner" destination="BOU-iO-eyL" id="mwx-5M-sMx"/>
                         <outlet property="quoteLabel" destination="aLz-HL-05o" id="Q3Z-pA-MBU"/>
@@ -138,12 +141,11 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="13.6" y="-185.75712143928038"/>
+            <point key="canvasLocation" x="1090.4000000000001" y="-193.85307346326837"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4XT-lF-ZDS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X9E-a1-3mH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1gR-X4-ZWL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="history" id="ij6-SL-Xnf"/>
                     <toolbarItems/>
@@ -156,11 +158,31 @@
                         <segue destination="X8I-mS-QZ8" kind="relationship" relationship="rootViewController" id="KWZ-y9-Ysp"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X9E-a1-3mH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13.6" y="550.97451274362822"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WL2-mG-pcu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z1l-VR-cXx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="HQX-1D-PVy"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vrf-ZW-M1y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TsN-nu-U90"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L71-QF-sQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149.59999999999999" y="-194.75262368815595"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="muq-ou-gfO"/>
+        <segue reference="Jxh-hY-IJl"/>
     </inferredMetricsTieBreakers>
 </document>
