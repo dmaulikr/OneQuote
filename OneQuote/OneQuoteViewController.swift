@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class OneQuoteViewController: UIViewController {
 
 
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!

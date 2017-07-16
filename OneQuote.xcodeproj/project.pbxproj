@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02EA17641F12B8250013CF40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA17631F12B8250013CF40 /* AppDelegate.swift */; };
-		02EA17661F12B8250013CF40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA17651F12B8250013CF40 /* ViewController.swift */; };
+		02EA17661F12B8250013CF40 /* OneQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA17651F12B8250013CF40 /* OneQuoteViewController.swift */; };
 		02EA17691F12B8250013CF40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02EA17671F12B8250013CF40 /* Main.storyboard */; };
 		02EA176C1F12B8250013CF40 /* OneQuote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02EA176A1F12B8250013CF40 /* OneQuote.xcdatamodeld */; };
 		02EA176E1F12B8250013CF40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EA176D1F12B8250013CF40 /* Assets.xcassets */; };
@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		02EA17601F12B8250013CF40 /* OneQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EA17631F12B8250013CF40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		02EA17651F12B8250013CF40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02EA17651F12B8250013CF40 /* OneQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneQuoteViewController.swift; sourceTree = "<group>"; };
 		02EA17681F12B8250013CF40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02EA176B1F12B8250013CF40 /* OneQuote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OneQuote.xcdatamodel; sourceTree = "<group>"; };
 		02EA176D1F12B8250013CF40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 				02EA17781F12BB400013CF40 /* OneQuoteClient.swift */,
 				02EA17631F12B8250013CF40 /* AppDelegate.swift */,
 				3C3C06571F16E61000FCB987 /* ColorWheel.swift */,
-				02EA17651F12B8250013CF40 /* ViewController.swift */,
+				02EA17651F12B8250013CF40 /* OneQuoteViewController.swift */,
 				02EA17671F12B8250013CF40 /* Main.storyboard */,
 				02EA176D1F12B8250013CF40 /* Assets.xcassets */,
 				02EA176F1F12B8250013CF40 /* LaunchScreen.storyboard */,
@@ -151,7 +151,7 @@
 			files = (
 				02EA177B1F12BB660013CF40 /* Constants.swift in Sources */,
 				02EA176C1F12B8250013CF40 /* OneQuote.xcdatamodeld in Sources */,
-				02EA17661F12B8250013CF40 /* ViewController.swift in Sources */,
+				02EA17661F12B8250013CF40 /* OneQuoteViewController.swift in Sources */,
 				02EA17791F12BB400013CF40 /* OneQuoteClient.swift in Sources */,
 				02EA17641F12B8250013CF40 /* AppDelegate.swift in Sources */,
 				3C3C06581F16E61000FCB987 /* ColorWheel.swift in Sources */,
