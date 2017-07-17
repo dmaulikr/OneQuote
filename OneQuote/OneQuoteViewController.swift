@@ -25,8 +25,10 @@ class OneQuoteViewController: UIViewController {
 
     }
     override func viewWillAppear(_ animated: Bool) {
-       
-        quoteLabel.text = quote
+        if let currentQuote = UserDefaults.standard.value(forKey: "currentQuote") as? String {
+            quoteLabel.text = currentQuote
+        }
+        
         
     }
 
@@ -47,7 +49,25 @@ class OneQuoteViewController: UIViewController {
 
         activitySpinner.startAnimating()
         OneQuoteClient.sharedInstance().getMethod(method, parameters: parameters) { [weak self] (result, error) in
+            if let errorMessage = error {
+                let alertVC = UIAlertController(title: "Error", message: "\(errorMessage.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
+                alertVC.addAction(okAction)
+                self?.present(alertVC, animated: false, completion: nil  )
+                self?.activitySpinner.stopAnimating()
+            }
             if let parsedData = result as? [String: AnyObject]{
+                if let errorCode = parsedData["error"] as? [String:AnyObject]  {
+                    if let code = errorCode["code"] as? Int, let message = errorCode["message"] as? String {
+                            let alertVC = UIAlertController(title: "Error", message: "\(code): \(message)", preferredStyle: UIAlertControllerStyle.alert)
+                            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
+                            alertVC.addAction(okAction)
+                            self?.present(alertVC, animated: false, completion: nil  )
+                            self?.activitySpinner.stopAnimating()
+                        
+                    }
+                }
+                
                 if let contents = parsedData["contents"] as? [String:AnyObject] {
                     if let quote = contents["quote"] as? String, let author = contents["author"] as? String, let id = contents["id"] as? String {
                         DispatchQueue.main.async {
@@ -56,6 +76,7 @@ class OneQuoteViewController: UIViewController {
                             self?.view.backgroundColor = self?.colorGenerator.getRandomColor()
                             self?.activitySpinner.stopAnimating()
                             self?.persistQuote(quote, id: id, author: author)
+                            UserDefaults.standard.set(self?.quote, forKey:"currentQuote")
                         }
                         
                     }

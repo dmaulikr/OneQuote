@@ -11,7 +11,7 @@ import Foundation
 class OneQuoteClient: NSObject {
     var session = URLSession.shared
     
-    func getMethod (_ method: String, parameters: [String: AnyObject], completionHandler: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) {
+    func getMethod (_ method: String, parameters: [String: AnyObject], completionHandler: @escaping (_ result: AnyObject?, _ error: Error?) -> Void) {
         //1. Set parameters
         
         //2. Build the URL
@@ -27,11 +27,14 @@ class OneQuoteClient: NSObject {
         //4. Make the request
         DispatchQueue.global(qos: .userInteractive).async {
             let task = self.session.dataTask(with: request as URLRequest) { (data, response, error) in
+                if error != nil { //Network error or something related
+                    completionHandler(nil, error)
+                }
                 //5. and 6. Parse and use the data
                 
                 /* GUARD: Was there any data returned? */
                 guard let data = data else {
-                    print("No data was returned by the request!")
+                    completionHandler(nil, CustomError(localizedDescription: "Cannot retrieve any data"))
                     return
                 }
                 DispatchQueue.main.async {
@@ -63,7 +66,7 @@ class OneQuoteClient: NSObject {
         return components.url!
     }
     // given raw JSON, return a usable Foundation object
-    private func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) {
+    private func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: @escaping (_ result: AnyObject?, _ error: Error?) -> Void) {
         
         var parsedResult: AnyObject! = nil
         do {
@@ -84,5 +87,11 @@ class OneQuoteClient: NSObject {
             static var sharedInstance = OneQuoteClient()
         }
         return Singelton.sharedInstance
+    }
+    struct CustomError: Error {
+        var localizedDescription: String
+        init(localizedDescription: String) {
+            self.localizedDescription = localizedDescription
+        }
     }
 }
