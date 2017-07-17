@@ -122,7 +122,11 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Quote" id="5NE-59-tYQ">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="dpe-4h-Q2z"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="dpe-4h-Q2z">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="BYZ-38-t0r" id="axS-tI-ya8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activitySpinner" destination="BOU-iO-eyL" id="mwx-5M-sMx"/>

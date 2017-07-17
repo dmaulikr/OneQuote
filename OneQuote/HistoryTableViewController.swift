@@ -54,7 +54,7 @@ class HistoryTableViewController: UITableViewController {
         if let quote = fetchResultsController?.object(at: indexPath){
             cell.textLabel?.text = quote.quote
             cell.detailTextLabel?.text = quote.author
-//            cell.tintColor = UIColor.blue
+
         }
 
         return cell
@@ -83,7 +83,7 @@ class HistoryTableViewController: UITableViewController {
         if let identifier = segue.identifier {
             if identifier == "showQuote" {
                 if let oneQuoteVC = segue.destination as? OneQuoteViewController {
-                    oneQuoteVC.quote = completeQuote
+                    oneQuoteVC.quote = completeQuote!
                 }
             }
             

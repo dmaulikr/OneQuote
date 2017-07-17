@@ -14,7 +14,7 @@ class OneQuoteViewController: UIViewController {
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     @IBOutlet weak var quoteLabel: UILabel!
     var colorGenerator = ColorWheel()
-    var quote:String?
+    var quote = "Where there is a will, there is a way"
     
     
     override func viewDidLoad() {
@@ -25,9 +25,9 @@ class OneQuoteViewController: UIViewController {
 
     }
     override func viewWillAppear(_ animated: Bool) {
-        if let myQuote = quote {
-            quoteLabel.text = myQuote
-        }
+       
+        quoteLabel.text = quote
+        
     }
 
 
@@ -51,7 +51,8 @@ class OneQuoteViewController: UIViewController {
                 if let contents = parsedData["contents"] as? [String:AnyObject] {
                     if let quote = contents["quote"] as? String, let author = contents["author"] as? String, let id = contents["id"] as? String {
                         DispatchQueue.main.async {
-                            self?.quoteLabel.text = "\(quote) - \(author)"
+                            self?.quote = "\(quote) - \(author)"
+                            self?.quoteLabel.text = self?.quote
                             self?.view.backgroundColor = self?.colorGenerator.getRandomColor()
                             self?.activitySpinner.stopAnimating()
                             self?.persistQuote(quote, id: id, author: author)
@@ -67,7 +68,7 @@ class OneQuoteViewController: UIViewController {
             let _ = Quote(context: context, author: author, id: id, quote: quote)
             try? context.save()
         }
-    printDBStatistic()
+//    printDBStatistic()
     }
     func printDBStatistic () {
         let context = AppDelegate.viewContext
@@ -83,6 +84,12 @@ class OneQuoteViewController: UIViewController {
             }
         }
     
+    }
+
+    @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
+        let activityViewController = UIActivityViewController(activityItems: [quote], applicationActivities: nil )
+        activityViewController.excludedActivityTypes = [UIActivityType.postToFacebook]
+        present(activityViewController, animated: true, completion: nil)
     }
 
 }
