@@ -11,11 +11,14 @@ import CoreData
 
 class HistoryTableViewController: UITableViewController {
     var fetchResultsController:NSFetchedResultsController<Quote>?
+    var appDelegate =  UIApplication.shared.delegate as? AppDelegate
     var completeQuote:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         retrieveDataFromDB()
     }
+    
+    @IBOutlet var edit: UIBarButtonItem!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -90,6 +93,35 @@ class HistoryTableViewController: UITableViewController {
             }
             
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            //Remove data from DB
+            if let quote = fetchResultsController?.object(at: indexPath) {
+                AppDelegate.viewContext.delete(quote)
+                appDelegate?.saveContext()
+            
+            }
+        }
+        retrieveDataFromDB()
+        tableView.setEditing(false, animated: true)
+        edit.title = "Edit"
+    }
+    @IBAction func editPressed(_ sender: UIBarButtonItem) {
+        if (sender.title == "Edit") {
+            tableView.setEditing(true, animated: true)
+            sender.title = "Cancel"
+        }
+        else if (sender.title == "Cancel") {
+            tableView.setEditing(false, animated: true)
+            sender.title = "Edit"
+        }
+        
     }
  
 

@@ -58,8 +58,9 @@ class OneQuoteViewController: UIViewController {
                 let alertVC = UIAlertController(title: "Error", message: "\(errorMessage.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
                 alertVC.addAction(okAction)
-                self?.present(alertVC, animated: false, completion: nil  )
                 self?.activitySpinner.stopAnimating()
+                self?.present(alertVC, animated: false, completion: nil  )
+                
             }
             if let parsedData = result as? [String: AnyObject]{
                 if let errorCode = parsedData["error"] as? [String:AnyObject]  {
@@ -67,8 +68,9 @@ class OneQuoteViewController: UIViewController {
                             let alertVC = UIAlertController(title: "Error", message: "\(code): \(message)", preferredStyle: UIAlertControllerStyle.alert)
                             let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
                             alertVC.addAction(okAction)
-                            self?.present(alertVC, animated: false, completion: nil  )
                             self?.activitySpinner.stopAnimating()
+                            self?.present(alertVC, animated: false, completion: nil  )
+                        
                         
                     }
                 }
