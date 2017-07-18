@@ -41,7 +41,7 @@ class HistoryTableViewController: UITableViewController {
     func retrieveDataFromDB () {
         let context = AppDelegate.viewContext
         let request: NSFetchRequest<Quote> = Quote.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "quote", ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
         fetchResultsController = NSFetchedResultsController<Quote>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         try? fetchResultsController?.performFetch()
         tableView.reloadData()
@@ -54,6 +54,7 @@ class HistoryTableViewController: UITableViewController {
         if let quote = fetchResultsController?.object(at: indexPath){
             cell.textLabel?.text = quote.quote
             cell.detailTextLabel?.text = quote.author
+            cell.imageView?.image = UIImage(named: "quote")
 
         }
 
@@ -83,7 +84,8 @@ class HistoryTableViewController: UITableViewController {
         if let identifier = segue.identifier {
             if identifier == "showQuote" {
                 if let oneQuoteVC = segue.destination as? OneQuoteViewController {
-                    oneQuoteVC.quote = completeQuote!
+                    oneQuoteVC.quote = completeQuote
+                    UserDefaults.standard.set(completeQuote, forKey:"currentQuote")
                 }
             }
             

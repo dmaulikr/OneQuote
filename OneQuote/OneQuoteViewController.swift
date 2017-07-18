@@ -14,22 +14,27 @@ class OneQuoteViewController: UIViewController {
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     @IBOutlet weak var quoteLabel: UILabel!
     var colorGenerator = ColorWheel()
-    var quote = "Where there is a will, there is a way"
-    
+    var quote:String? {
+        didSet {
+            UserDefaults.standard.set(quote, forKey:"currentQuote")
+            print("Quote: \(quote)")
+        }
+    }
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         activitySpinner.hidesWhenStopped = true
         view.backgroundColor = colorGenerator.getRandomColor()
-
+      
     }
     override func viewWillAppear(_ animated: Bool) {
         if let currentQuote = UserDefaults.standard.value(forKey: "currentQuote") as? String {
             quoteLabel.text = currentQuote
         }
-        
-        
+
     }
 
 
@@ -76,7 +81,7 @@ class OneQuoteViewController: UIViewController {
                             self?.view.backgroundColor = self?.colorGenerator.getRandomColor()
                             self?.activitySpinner.stopAnimating()
                             self?.persistQuote(quote, id: id, author: author)
-                            UserDefaults.standard.set(self?.quote, forKey:"currentQuote")
+                            
                         }
                         
                     }
@@ -86,7 +91,7 @@ class OneQuoteViewController: UIViewController {
     }
     func persistQuote(_ quote:String, id:String, author:String ) {
         AppDelegate.persistentContainer.performBackgroundTask { (context) in
-            let _ = Quote(context: context, author: author, id: id, quote: quote)
+            let _ = Quote(context: context, author: author, id: id, quote: quote, date: Date())
             try? context.save()
         }
 //    printDBStatistic()

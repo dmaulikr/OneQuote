@@ -22,6 +22,7 @@
                     <connections>
                         <segue destination="z1l-VR-cXx" kind="relationship" relationship="viewControllers" id="cnD-aM-3e7"/>
                         <segue destination="1gR-X4-ZWL" kind="relationship" relationship="viewControllers" id="DWs-CR-Ra5"/>
+                        <segue destination="rld-ox-SBW" kind="relationship" relationship="viewControllers" id="dlg-II-pFP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oA1-5s-0xE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -45,17 +46,19 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3NC-TM-4ZI">
-                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="5" width="35.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j9X-Ud-cUM">
                                             <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -82,6 +85,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5e-Q4-cwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="952.79999999999995" y="550.97451274362822"/>
+        </scene>
+        <!--Create Quote View Controller-->
+        <scene sceneID="pdD-uj-QYf">
+            <objects>
+                <viewController id="rld-ox-SBW" customClass="CreateQuoteViewController" customModule="OneQuote" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FJc-Bh-fil"/>
+                        <viewControllerLayoutGuide type="bottom" id="qX3-Fv-LrP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3q7-TA-OJk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8fh-cG-tPX">
+                                <rect key="frame" x="0.0" y="135" width="375" height="172.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your own quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdZ-XZ-Etf">
+                                        <rect key="frame" x="50" y="0.0" width="275" height="33.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter quote here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pNP-fv-u1z">
+                                        <rect key="frame" x="16" y="36.5" width="343" height="50"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="4eL-oO-Pys"/>
+                                            <constraint firstAttribute="width" constant="343" id="iPJ-cT-eJB"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter author here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VkW-bd-efA">
+                                        <rect key="frame" x="16" y="89.5" width="343" height="50"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="343" id="CR5-0p-QlC"/>
+                                            <constraint firstAttribute="height" constant="50" id="fKc-oo-17L"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tw-yw-Nmc">
+                                        <rect key="frame" x="163" y="142.5" width="49" height="30"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="submitPressed:" destination="rld-ox-SBW" eventType="touchUpInside" id="fI2-oo-yOC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="0.81715539383561642" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8fh-cG-tPX" secondAttribute="trailing" id="BcN-zt-mtr"/>
+                            <constraint firstItem="8fh-cG-tPX" firstAttribute="leading" secondItem="3q7-TA-OJk" secondAttribute="leading" id="hfa-Ex-HAo"/>
+                            <constraint firstItem="8fh-cG-tPX" firstAttribute="top" secondItem="FJc-Bh-fil" secondAttribute="bottom" constant="115" id="yv5-bc-GRh"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="X7m-3y-CjI"/>
+                    <connections>
+                        <outlet property="authorTextField" destination="VkW-bd-efA" id="0bn-YB-LNY"/>
+                        <outlet property="quoteTextField" destination="pNP-fv-u1z" id="Inm-yq-aDo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MLx-xH-28K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-116" y="1338.9805097451276"/>
         </scene>
         <!--Quote-->
         <scene sceneID="tne-QT-ifu">
@@ -187,6 +263,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Jxh-hY-IJl"/>
+        <segue reference="TsN-nu-U90"/>
     </inferredMetricsTieBreakers>
 </document>

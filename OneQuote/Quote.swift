@@ -8,10 +8,11 @@
 
 import CoreData
 class Quote: NSManagedObject {
-    convenience init(context: NSManagedObjectContext, author: String, id: String, quote: String) {
+    convenience init(context: NSManagedObjectContext, author: String, id: String, quote: String, date: Date) {
         self.init(context: context)
         self.author = author
         self.id = id
         self.quote = quote
+        self.date = date as NSDate
     }
 }

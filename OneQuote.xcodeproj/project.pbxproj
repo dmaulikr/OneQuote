@@ -18,6 +18,8 @@
 		02EA177D1F1BEEED0013CF40 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA177C1F1BEEED0013CF40 /* Quote.swift */; };
 		02EA17801F1BF5660013CF40 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA177F1F1BF5660013CF40 /* HistoryTableViewController.swift */; };
 		3C3C06581F16E61000FCB987 /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C06571F16E61000FCB987 /* ColorWheel.swift */; };
+		3C3C065D1F1D760200FCB987 /* RandomString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C065C1F1D760200FCB987 /* RandomString.swift */; };
+		3C3C065F1F1D871600FCB987 /* CreateQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C065E1F1D871600FCB987 /* CreateQuoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		02EA177C1F1BEEED0013CF40 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		02EA177F1F1BF5660013CF40 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		3C3C06571F16E61000FCB987 /* ColorWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorWheel.swift; sourceTree = "<group>"; };
+		3C3C065C1F1D760200FCB987 /* RandomString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomString.swift; sourceTree = "<group>"; };
+		3C3C065E1F1D871600FCB987 /* CreateQuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateQuoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,14 +70,9 @@
 		02EA17621F12B8250013CF40 /* OneQuote */ = {
 			isa = PBXGroup;
 			children = (
-				02EA177A1F12BB660013CF40 /* Constants.swift */,
-				02EA17781F12BB400013CF40 /* OneQuoteClient.swift */,
-				3C3C06571F16E61000FCB987 /* ColorWheel.swift */,
-				02EA17651F12B8250013CF40 /* OneQuoteViewController.swift */,
-				02EA177F1F1BF5660013CF40 /* HistoryTableViewController.swift */,
-				02EA17671F12B8250013CF40 /* Main.storyboard */,
-				02EA176A1F12B8250013CF40 /* OneQuote.xcdatamodeld */,
-				02EA177C1F1BEEED0013CF40 /* Quote.swift */,
+				3C3C065B1F1D75E400FCB987 /* Views */,
+				3C3C06591F1D75A000FCB987 /* Model */,
+				3C3C065A1F1D75B600FCB987 /* Controllers */,
 				02EA177E1F1BEFD10013CF40 /* Support Files */,
 			);
 			path = OneQuote;
@@ -84,10 +83,41 @@
 			children = (
 				02EA17631F12B8250013CF40 /* AppDelegate.swift */,
 				02EA176D1F12B8250013CF40 /* Assets.xcassets */,
-				02EA176F1F12B8250013CF40 /* LaunchScreen.storyboard */,
 				02EA17721F12B8250013CF40 /* Info.plist */,
 			);
 			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		3C3C06591F1D75A000FCB987 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02EA177A1F12BB660013CF40 /* Constants.swift */,
+				02EA17781F12BB400013CF40 /* OneQuoteClient.swift */,
+				3C3C06571F16E61000FCB987 /* ColorWheel.swift */,
+				3C3C065C1F1D760200FCB987 /* RandomString.swift */,
+				02EA176A1F12B8250013CF40 /* OneQuote.xcdatamodeld */,
+				02EA177C1F1BEEED0013CF40 /* Quote.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3C3C065A1F1D75B600FCB987 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3C3C065E1F1D871600FCB987 /* CreateQuoteViewController.swift */,
+				02EA17651F12B8250013CF40 /* OneQuoteViewController.swift */,
+				02EA177F1F1BF5660013CF40 /* HistoryTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3C3C065B1F1D75E400FCB987 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02EA176F1F12B8250013CF40 /* LaunchScreen.storyboard */,
+				02EA17671F12B8250013CF40 /* Main.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,8 +195,10 @@
 			files = (
 				02EA17801F1BF5660013CF40 /* HistoryTableViewController.swift in Sources */,
 				02EA177B1F12BB660013CF40 /* Constants.swift in Sources */,
+				3C3C065D1F1D760200FCB987 /* RandomString.swift in Sources */,
 				02EA176C1F12B8250013CF40 /* OneQuote.xcdatamodeld in Sources */,
 				02EA17661F12B8250013CF40 /* OneQuoteViewController.swift in Sources */,
+				3C3C065F1F1D871600FCB987 /* CreateQuoteViewController.swift in Sources */,
 				02EA17791F12BB400013CF40 /* OneQuoteClient.swift in Sources */,
 				02EA17641F12B8250013CF40 /* AppDelegate.swift in Sources */,
 				02EA177D1F1BEEED0013CF40 /* Quote.swift in Sources */,
