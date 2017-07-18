@@ -21,7 +21,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="z1l-VR-cXx" kind="relationship" relationship="viewControllers" id="cnD-aM-3e7"/>
-                        <segue destination="1gR-X4-ZWL" kind="relationship" relationship="viewControllers" id="DWs-CR-Ra5"/>
                         <segue destination="rld-ox-SBW" kind="relationship" relationship="viewControllers" id="dlg-II-pFP"/>
                     </connections>
                 </tabBarController>
@@ -93,7 +92,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5e-Q4-cwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952.79999999999995" y="550.97451274362822"/>
+            <point key="canvasLocation" x="2382" y="-206"/>
         </scene>
         <!--Create Quote View Controller-->
         <scene sceneID="pdD-uj-QYf">
@@ -166,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLx-xH-28K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="1338.9805097451276"/>
+            <point key="canvasLocation" x="217" y="590"/>
         </scene>
         <!--Quote-->
         <scene sceneID="tne-QT-ifu">
@@ -207,6 +206,11 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Quote" id="5NE-59-tYQ">
+                        <barButtonItem key="leftBarButtonItem" title="History" id="Qm0-uZ-jbh">
+                            <connections>
+                                <segue destination="X8I-mS-QZ8" kind="show" id="1X0-Q3-3Bq"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="dpe-4h-Q2z">
                             <connections>
                                 <action selector="shareButtonPressed:" destination="BYZ-38-t0r" id="axS-tI-ya8"/>
@@ -233,25 +237,6 @@
             <point key="canvasLocation" x="1090.4000000000001" y="-193.85307346326837"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="4XT-lF-ZDS">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1gR-X4-ZWL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="ij6-SL-Xnf"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FNH-Ns-Fzq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="X8I-mS-QZ8" kind="relationship" relationship="rootViewController" id="KWZ-y9-Ysp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X9E-a1-3mH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="13.6" y="550.97451274362822"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="WL2-mG-pcu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z1l-VR-cXx" sceneMemberID="viewController">
@@ -272,6 +257,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Jxh-hY-IJl"/>
+        <segue reference="TsN-nu-U90"/>
     </inferredMetricsTieBreakers>
 </document>

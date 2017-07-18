@@ -9,14 +9,16 @@
 import UIKit
 import CoreData
 
-class CreateQuoteViewController: UIViewController, UITextFieldDelegate {
+class CreateQuoteViewController: UIViewController, UITextFieldDelegate, UITabBarControllerDelegate {
 
     @IBOutlet weak var quoteTextField: UITextField!
     @IBOutlet weak var authorTextField: UITextField!
+    var completeQuote:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         quoteTextField.delegate = self
         authorTextField.delegate = self
+        self.tabBarController?.delegate = self
     }
 
     
@@ -24,6 +26,7 @@ class CreateQuoteViewController: UIViewController, UITextFieldDelegate {
         if let quote = quoteTextField.text , let author = authorTextField.text {
                 let randomStringGenerator = RandomString()
                 let id = randomStringGenerator.randomString(length: 24)
+                completeQuote = "\(quote) - \(author)"
                 AppDelegate.persistentContainer.performBackgroundTask { (context) in
                     let _ = Quote(context: context, author: author, id: id, quote: quote, date: Date())
                     try? context.save()
@@ -32,7 +35,11 @@ class CreateQuoteViewController: UIViewController, UITextFieldDelegate {
                 authorTextField.text = ""
                 quoteTextField.resignFirstResponder()
                 authorTextField.resignFirstResponder()
-                self.tabBarController?.selectedIndex = 1
+        
+                if let oneQuoteVC = self.tabBarController?.viewControllers?[0].childViewControllers[0] as? OneQuoteViewController {
+                    oneQuoteVC.quote = completeQuote
+                }
+                self.tabBarController?.selectedIndex = 0
 
         }
     }
@@ -44,4 +51,5 @@ class CreateQuoteViewController: UIViewController, UITextFieldDelegate {
     }
 
 
+    
 }
