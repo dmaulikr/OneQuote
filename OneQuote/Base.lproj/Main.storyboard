@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -179,8 +178,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mountain" translatesAutoresizingMaskIntoConstraints="NO" id="04p-k5-vIC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where there is a will, there is a way !" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-HL-05o">
-                                <rect key="frame" x="16" y="64" width="343" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="0.5879441352739726" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,14 +193,17 @@
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="aLz-HL-05o" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="NX3-rq-8Ou"/>
+                            <constraint firstItem="04p-k5-vIC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="42m-WJ-6JA"/>
+                            <constraint firstItem="04p-k5-vIC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FZQ-jt-adH"/>
+                            <constraint firstAttribute="trailing" secondItem="aLz-HL-05o" secondAttribute="trailing" id="GiJ-LH-GMd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aLz-HL-05o" secondAttribute="bottom" id="fYR-og-1z1"/>
                             <constraint firstItem="BOU-iO-eyL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="h2E-ox-uya"/>
-                            <constraint firstItem="aLz-HL-05o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oed-S4-bvL"/>
-                            <constraint firstItem="aLz-HL-05o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="uOd-5p-PLe"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aLz-HL-05o" secondAttribute="bottom" id="vmk-YX-OEN"/>
+                            <constraint firstAttribute="trailing" secondItem="04p-k5-vIC" secondAttribute="trailing" id="pG6-WY-an6"/>
+                            <constraint firstItem="aLz-HL-05o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tVb-8f-A2t"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="04p-k5-vIC" secondAttribute="bottom" id="tge-zn-Oz2"/>
+                            <constraint firstItem="aLz-HL-05o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uUg-cm-dkj"/>
                             <constraint firstItem="BOU-iO-eyL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zQ0-cY-xzX"/>
                         </constraints>
                         <connections>
@@ -219,6 +225,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activitySpinner" destination="BOU-iO-eyL" id="mwx-5M-sMx"/>
+                        <outlet property="imageView" destination="04p-k5-vIC" id="IhJ-Uy-fix"/>
                         <outlet property="quoteLabel" destination="aLz-HL-05o" id="Q3Z-pA-MBU"/>
                     </connections>
                 </viewController>
@@ -256,6 +263,9 @@
             <point key="canvasLocation" x="149.59999999999999" y="-194.75262368815595"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mountain" width="800" height="532"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TsN-nu-U90"/>
     </inferredMetricsTieBreakers>

@@ -11,8 +11,10 @@ import CoreData
 class OneQuoteViewController: UIViewController {
 
 
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     @IBOutlet weak var quoteLabel: UILabel!
+    var wallpaper: Wallpaper?
     var colorGenerator = ColorWheel()
     var quote:String? {
         didSet {
@@ -27,6 +29,9 @@ class OneQuoteViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         activitySpinner.hidesWhenStopped = true
         view.backgroundColor = colorGenerator.getRandomColor()
+        wallpaper = Wallpaper()
+       
+        
       
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +40,7 @@ class OneQuoteViewController: UIViewController {
             quote = currentQuote
         }
 
+        
     }
 
 
@@ -44,10 +50,13 @@ class OneQuoteViewController: UIViewController {
         parameters[Constants.ParameterKey.MaxLength] = Constants.ParameterValue.MaxLengthValue as AnyObject
         parameters[Constants.ParameterKey.MinLength] = Constants.ParameterValue.MinLengthValue as AnyObject
         getQuoteWithParameters(parameters, method: Constants.Methods.Search)
+        
+
     }
     @IBAction func swipeRecognized(_ sender: UISwipeGestureRecognizer) {
         let parameters = [String: AnyObject] ()
         getQuoteWithParameters(parameters, method: Constants.Methods.Random)
+
     }
 
     func getQuoteWithParameters (_ parameters: [String:AnyObject], method: String) {
@@ -76,9 +85,36 @@ class OneQuoteViewController: UIViewController {
                         DispatchQueue.main.async {
                             self?.quote = "\(quote) - \(author)"
                             self?.quoteLabel.text = self?.quote
-                            self?.view.backgroundColor = self?.colorGenerator.getRandomColor()
+                            let color = self?.colorGenerator.getRandomColor()
+                            self?.view.backgroundColor = color
+                            self?.quoteLabel.backgroundColor = color
+                            
+                            if (self?.wallpaper?.wallpapers.isEmpty != true) {
+                                let imageURL = self?.wallpaper?.getRandomPicURL()
+                                DispatchQueue.global(qos: .userInteractive).async {
+                                    
+                                    if let url = URL(string: imageURL!) {
+                                        do {
+                                            let data = try Data(contentsOf: url)
+                                            
+                                            DispatchQueue.main.async {
+                                                let image = UIImage(data: data)
+                                                self?.imageView.image = image
+                                            }
+                                            
+                                        }
+                                        catch {
+                                            print("Error getting Data")
+                                        }
+                                        
+                                    }
+                                }
+                                
+                            }
+                            
                             self?.activitySpinner.stopAnimating()
                             self?.persistQuote(quote, id: id, author: author)
+                            
                             
                         }
                         

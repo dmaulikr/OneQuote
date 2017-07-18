@@ -19,6 +19,7 @@ class CreateQuoteViewController: UIViewController, UITextFieldDelegate, UITabBar
         quoteTextField.delegate = self
         authorTextField.delegate = self
         self.tabBarController?.delegate = self
+
     }
 
     

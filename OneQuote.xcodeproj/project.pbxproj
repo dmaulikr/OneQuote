@@ -20,6 +20,8 @@
 		3C3C06581F16E61000FCB987 /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C06571F16E61000FCB987 /* ColorWheel.swift */; };
 		3C3C065D1F1D760200FCB987 /* RandomString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C065C1F1D760200FCB987 /* RandomString.swift */; };
 		3C3C065F1F1D871600FCB987 /* CreateQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C065E1F1D871600FCB987 /* CreateQuoteViewController.swift */; };
+		3C3C06611F1EBF7B00FCB987 /* FlickerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C06601F1EBF7B00FCB987 /* FlickerClient.swift */; };
+		3C3C06631F1EC28A00FCB987 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C06621F1EC28A00FCB987 /* Wallpaper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		3C3C06571F16E61000FCB987 /* ColorWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorWheel.swift; sourceTree = "<group>"; };
 		3C3C065C1F1D760200FCB987 /* RandomString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomString.swift; sourceTree = "<group>"; };
 		3C3C065E1F1D871600FCB987 /* CreateQuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateQuoteViewController.swift; sourceTree = "<group>"; };
+		3C3C06601F1EBF7B00FCB987 /* FlickerClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickerClient.swift; sourceTree = "<group>"; };
+		3C3C06621F1EC28A00FCB987 /* Wallpaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +95,11 @@
 		3C3C06591F1D75A000FCB987 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3C3C06601F1EBF7B00FCB987 /* FlickerClient.swift */,
 				02EA177A1F12BB660013CF40 /* Constants.swift */,
 				02EA17781F12BB400013CF40 /* OneQuoteClient.swift */,
 				3C3C06571F16E61000FCB987 /* ColorWheel.swift */,
+				3C3C06621F1EC28A00FCB987 /* Wallpaper.swift */,
 				3C3C065C1F1D760200FCB987 /* RandomString.swift */,
 				02EA176A1F12B8250013CF40 /* OneQuote.xcdatamodeld */,
 				02EA177C1F1BEEED0013CF40 /* Quote.swift */,
@@ -202,6 +208,8 @@
 				02EA17791F12BB400013CF40 /* OneQuoteClient.swift in Sources */,
 				02EA17641F12B8250013CF40 /* AppDelegate.swift in Sources */,
 				02EA177D1F1BEEED0013CF40 /* Quote.swift in Sources */,
+				3C3C06611F1EBF7B00FCB987 /* FlickerClient.swift in Sources */,
+				3C3C06631F1EC28A00FCB987 /* Wallpaper.swift in Sources */,
 				3C3C06581F16E61000FCB987 /* ColorWheel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
