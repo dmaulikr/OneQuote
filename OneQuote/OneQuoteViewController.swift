@@ -17,7 +17,6 @@ class OneQuoteViewController: UIViewController {
     var quote:String? {
         didSet {
             UserDefaults.standard.set(quote, forKey:"currentQuote")
-            print("Quote: \(quote)")
         }
     }
 
@@ -33,6 +32,7 @@ class OneQuoteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if let currentQuote = UserDefaults.standard.value(forKey: "currentQuote") as? String {
             quoteLabel.text = currentQuote
+            quote = currentQuote
         }
 
     }

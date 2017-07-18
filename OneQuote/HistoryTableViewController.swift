@@ -88,7 +88,6 @@ class HistoryTableViewController: UITableViewController {
             if identifier == "showQuote" {
                 if let oneQuoteVC = segue.destination as? OneQuoteViewController {
                     oneQuoteVC.quote = completeQuote
-                    UserDefaults.standard.set(completeQuote, forKey:"currentQuote")
                 }
             }
             

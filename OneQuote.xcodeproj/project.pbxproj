@@ -152,7 +152,7 @@
 				TargetAttributes = {
 					02EA175F1F12B8250013CF40 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = LAB4TFH643;
+						DevelopmentTeam = 636MVCPK34;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -327,11 +327,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LAB4TFH643;
+				DEVELOPMENT_TEAM = 636MVCPK34;
 				INFOPLIST_FILE = OneQuote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ryan.OneQuote;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RyanDev.OneQuote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -341,11 +341,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LAB4TFH643;
+				DEVELOPMENT_TEAM = 636MVCPK34;
 				INFOPLIST_FILE = OneQuote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ryan.OneQuote;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RyanDev.OneQuote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
