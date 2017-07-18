@@ -55,25 +55,23 @@ class OneQuoteViewController: UIViewController {
         activitySpinner.startAnimating()
         OneQuoteClient.sharedInstance().getMethod(method, parameters: parameters) { [weak self] (result, error) in
             if let errorMessage = error {
-                let alertVC = UIAlertController(title: "Error", message: "\(errorMessage.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
-                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
-                alertVC.addAction(okAction)
-                self?.present(alertVC, animated: false, completion: nil  )
-                self?.activitySpinner.stopAnimating()
+                DispatchQueue.main.async {
+                    self?.displayErrorMessage(errorMessage)
+                }
+                
             }
             if let parsedData = result as? [String: AnyObject]{
                 if let errorCode = parsedData["error"] as? [String:AnyObject]  {
-                    if let code = errorCode["code"] as? Int, let message = errorCode["message"] as? String {
-                            let alertVC = UIAlertController(title: "Error", message: "\(code): \(message)", preferredStyle: UIAlertControllerStyle.alert)
-                            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
-                            alertVC.addAction(okAction)
-                            self?.present(alertVC, animated: false, completion: nil  )
-                            self?.activitySpinner.stopAnimating()
-                        
+                    DispatchQueue.main.async {
+                        if let code = errorCode["code"] as? Int, let message = errorCode["message"] as? String {
+                            let errorMessage =  OneQuoteClient.CustomError(localizedDescription: "\(code): \(message)")
+                            self?.displayErrorMessage(errorMessage)
+                        }
                     }
-                }
+                    
+            }
                 
-                if let contents = parsedData["contents"] as? [String:AnyObject] {
+            if let contents = parsedData["contents"] as? [String:AnyObject] {
                     if let quote = contents["quote"] as? String, let author = contents["author"] as? String, let id = contents["id"] as? String {
                         DispatchQueue.main.async {
                             self?.quote = "\(quote) - \(author)"
@@ -88,6 +86,7 @@ class OneQuoteViewController: UIViewController {
                 }
             }
         }
+        
     }
     func persistQuote(_ quote:String, id:String, author:String ) {
         AppDelegate.persistentContainer.performBackgroundTask { (context) in
@@ -95,6 +94,14 @@ class OneQuoteViewController: UIViewController {
             try? context.save()
         }
 //    printDBStatistic()
+    }
+    func displayErrorMessage(_ error: Error) {
+            let alertVC = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
+            alertVC.addAction(okAction)
+            present(alertVC, animated: false, completion: nil  )
+            activitySpinner.stopAnimating()
+        
     }
     func printDBStatistic () {
         let context = AppDelegate.viewContext
