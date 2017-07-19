@@ -76,7 +76,7 @@ struct Constants {
         static let MediumURL = "url_m"
         static let UseSafeSearch = "1"
         static let NumberOfImagePerPage = "1000"
-        static let InspireSunRiseTag = "wallpaper, inspire, sun rise"
+        static let InspireSunRiseTag = "sunrise"
     }
     
     // MARK: Flickr Response Keys
