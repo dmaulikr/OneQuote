@@ -20,8 +20,10 @@ class OneQuoteViewController: UIViewController {
         didSet {
             UserDefaults.standard.set(quote, forKey:"currentQuote")
         }
+        
     }
-
+    var statusBarHidden = true
+    var barsHidden = true
 
     
     override func viewDidLoad() {
@@ -30,9 +32,29 @@ class OneQuoteViewController: UIViewController {
         activitySpinner.hidesWhenStopped = true
         view.backgroundColor = colorGenerator.getRandomColor()
         wallpaper = Wallpaper()
-       
-        
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = true
+        configureSwipes()
+        hideOrShowAllBars()
       
+    }
+    func configureSwipes () {
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(swipeDown)
+    
     }
     override func viewWillAppear(_ animated: Bool) {
         if let currentQuote = UserDefaults.standard.value(forKey: "currentQuote") as? String {
@@ -42,23 +64,60 @@ class OneQuoteViewController: UIViewController {
 
         
     }
-
-
-    @IBAction func tapRecognized(_ sender: UITapGestureRecognizer) {
+    override var prefersStatusBarHidden: Bool {
+        return statusBarHidden
+    }
+    func respondToSwipeGesture(_ sender: UISwipeGestureRecognizer) {
         var parameters = [String: AnyObject] ()
-        parameters[Constants.ParameterKey.Category] = Constants.ParameterValue.Inspire as AnyObject
-        parameters[Constants.ParameterKey.MaxLength] = Constants.ParameterValue.MaxLengthValue as AnyObject
-        parameters[Constants.ParameterKey.MinLength] = Constants.ParameterValue.MinLengthValue as AnyObject
-        getQuoteWithParameters(parameters, method: Constants.Methods.Search)
+        if let swipeGesture = sender as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                print("Swiped right")
+                getQuoteWithParameters(parameters, method: Constants.Methods.Random)
+            case UISwipeGestureRecognizerDirection.down:
+                print("Swiped down")
+                parameters[Constants.ParameterKey.Category] = Constants.ParameterValue.Funny as AnyObject
+                parameters[Constants.ParameterKey.MaxLength] = Constants.ParameterValue.MaxLengthValue as AnyObject
+                parameters[Constants.ParameterKey.MinLength] = Constants.ParameterValue.MinLengthValue as AnyObject
+                getQuoteWithParameters(parameters, method: Constants.Methods.Search)
+            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped left")
+                parameters[Constants.ParameterKey.Category] = Constants.ParameterValue.Life as AnyObject
+                parameters[Constants.ParameterKey.MaxLength] = Constants.ParameterValue.MaxLengthValue as AnyObject
+                parameters[Constants.ParameterKey.MinLength] = Constants.ParameterValue.MinLengthValue as AnyObject
+                getQuoteWithParameters(parameters, method: Constants.Methods.Search)
+            case UISwipeGestureRecognizerDirection.up:
+                print("Swiped up")
+                parameters[Constants.ParameterKey.Category] = Constants.ParameterValue.Inspire as AnyObject
+                parameters[Constants.ParameterKey.MaxLength] = Constants.ParameterValue.MaxLengthValue as AnyObject
+                parameters[Constants.ParameterKey.MinLength] = Constants.ParameterValue.MinLengthValue as AnyObject
+                getQuoteWithParameters(parameters, method: Constants.Methods.Search)
+            default:
+                break
+            }
+            barsHidden = true
+            hideOrShowAllBars()
+        }
+    }
+    @IBAction func tapRecognized(_ sender: UITapGestureRecognizer) {
+
+        if (barsHidden == true) {
+            barsHidden = false
+        }
+        else {
+            barsHidden = true
+        }
+        hideOrShowAllBars()
         
-
     }
-    @IBAction func swipeRecognized(_ sender: UISwipeGestureRecognizer) {
-        let parameters = [String: AnyObject] ()
-        getQuoteWithParameters(parameters, method: Constants.Methods.Random)
+    
 
+    func hideOrShowAllBars() {
+        self.tabBarController?.tabBar.isHidden = barsHidden
+        self.navigationController?.navigationBar.isHidden = barsHidden
+        statusBarHidden = barsHidden
+        setNeedsStatusBarAppearanceUpdate()
     }
-
     func getQuoteWithParameters (_ parameters: [String:AnyObject], method: String) {
 
         activitySpinner.startAnimating()

@@ -208,7 +208,6 @@
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="nbA-ve-2pX" appends="YES" id="kwS-51-ZHE"/>
-                            <outletCollection property="gestureRecognizers" destination="dw5-Dk-9Kz" appends="YES" id="brh-nt-ZuC"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Quote" id="5NE-59-tYQ">
@@ -235,11 +234,6 @@
                         <action selector="tapRecognized:" destination="BYZ-38-t0r" id="4sc-pU-jI8"/>
                     </connections>
                 </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="dw5-Dk-9Kz">
-                    <connections>
-                        <action selector="swipeRecognized:" destination="BYZ-38-t0r" id="gwb-fZ-X1G"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1090.4000000000001" y="-193.85307346326837"/>
         </scene>

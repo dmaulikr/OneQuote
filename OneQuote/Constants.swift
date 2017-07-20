@@ -33,6 +33,9 @@ struct Constants {
     }
     struct ParameterValue{
         static let Inspire = "inspire"
+        static let Management = "management"
+        static let Life = "life"
+        static let Funny = "funny"
         static let MaxLengthValue = "130"
         static let MinLengthValue = "20"
     }
